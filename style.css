@@ -1,0 +1,23 @@
+body {
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+}
+
+main {
+   flex: 1;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: var(--bg-main);
+   flex-direction: column;
+}
+
+.cardWidth {
+   width: 40rem;
+}
+
+.circl {
+   width: 40px !important;
+   border-radius: 80px !important;
+}
