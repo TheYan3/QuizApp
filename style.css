@@ -13,11 +13,46 @@ main {
    flex-direction: column;
 }
 
-.cardWidth {
-   width: 40rem;
-}
-
 .circl {
    width: 40px !important;
    border-radius: 80px !important;
+}
+
+.bg-darkblue {
+   background-color: var(--sec-main) !important;
+}
+
+.progress {
+   --bs-progress-bar-bg: var(--sec-main) !important;
+}
+
+.btn-primary {
+   --bs-btn-bg: var(--btn-bg) !important;
+   --bs-btn-border-color: var(--btn-bg) !important;
+}
+
+.imgWidth {
+   width: 60%;
+}
+
+.d-flex {
+   align-items: center;
+}
+
+a {
+   text-decoration: none !important;
+   color: white !important;
+   font-size: 24px !important;
+}
+
+.leftLine {
+   border-left: 3px solid white;
+}
+
+.tabContainer {
+   width: 100%;
+}
+
+.card-title {
+   text-align: center;
 }
