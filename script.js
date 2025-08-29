@@ -13,3 +13,11 @@ function showQuestionAndAnswers() {
     }
 }
 
+function answer(i) {
+    if (i == questionRef.right_answer){
+        document.getElementById("answerLine" + i).classList.add("bg-success")
+    }else {
+         document.getElementById("answerLine" + i).classList.add("bg-danger")
+    }
+
+}

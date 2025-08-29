@@ -56,3 +56,9 @@ a {
 .card-title {
    text-align: center;
 }
+
+.answerCard:hover {
+   cursor: pointer;
+   background-color: var(--btn-bg);
+}
+
