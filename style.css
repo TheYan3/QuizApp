@@ -62,3 +62,6 @@ a {
    background-color: var(--btn-bg);
 }
 
+.bg-success, .bg-danger {
+   color: var(--bs-white) !important;
+}
