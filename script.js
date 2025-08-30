@@ -50,3 +50,7 @@ function btndisable() {
     document.getElementById("btnLeft").disabled = true;
     
 }
+
+// wenn alle 10 fragen durch dann stopp 
+// bg- danger remove wenn nächste frage
+// meherer frage bibliootheken hizugügen
