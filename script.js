@@ -1,5 +1,6 @@
 let currentQuestion = 0
 let questionRef = questions[currentQuestion]
+let timeoutId;
 
 function init() {
      showQuestionAndAnswers() 
@@ -17,21 +18,38 @@ function showQuestionAndAnswers() {
 
 function answer(i) {
     if (i == questionRef.right_answer){
-        document.getElementById("answerLine" + i).classList.add("bg-success")
+        document.getElementById("answerLine" + i).classList.add("bg-success") 
         document.getElementById("btnRight").disabled = false;
-        setTimeout(() => nextQuestion(i), 2500);
+        timeoutId = setTimeout(() => nextQuestion(), 2500);
     }else {
          document.getElementById("answerLine" + i).classList.add("bg-danger")
+
     }
 
 }
 
-function nextQuestion(i) {
-    currentQuestion += 1
-    questionRef = questions[currentQuestion]
-    document.getElementById("answerLine" + i).classList.remove("bg-success")
-    document.getElementById("btnLeft").disabled = false;
-    showQuestionAndAnswers()
+function nextQuestion() {
+
+    if (currentQuestion != questions.length - 1) {
+        clearTimeout(timeoutId);
+
+        currentQuestion += 1
+        questionRef = questions[currentQuestion]
+        for (let cl = 1; cl <= 4; cl++) {
+            document.getElementById("answerLine" + cl).classList.remove("bg-success", "bg-danger")
+        }
+        document.getElementById("btnLeft").disabled = false;
+        showQuestionAndAnswers()   
+    } else {
+
+        document.getElementById("questionLine").innerHTML = "Glückwunsch! Du hast das Quiz beendet!";
+        document.getElementById("btnRight").disabled = true;
+        document.getElementById("btnLeft").disabled = true;
+        for (let cl = 1; cl <= 4; cl++) {
+            document.getElementById("answerLine" + cl).classList.add("d-none")
+        }
+        
+    }
     
 }
 
@@ -48,9 +66,6 @@ function lastQuestion() {
 
 function btndisable() {
     document.getElementById("btnLeft").disabled = true;
-    
 }
 
-// wenn alle 10 fragen durch dann stopp 
-// bg- danger remove wenn nächste frage
 // meherer frage bibliootheken hizugügen
