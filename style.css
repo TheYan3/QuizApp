@@ -62,6 +62,18 @@ a {
    background-color: var(--btn-bg);
 }
 
-.bg-success, .bg-danger {
+.bg-success,
+.bg-danger {
    color: var(--bs-white) !important;
+}
+
+#questionLine {
+   height: 100px; /* Feste Höhe für das Frage-Fenster */
+   overflow: hidden; /* Verhindert, dass der Text überläuft */
+   text-overflow: ellipsis; /* Fügt "..." hinzu, wenn der Text abgeschnitten wird */
+   display: flex;
+   align-items: center; /* Zentriert den Text vertikal */
+   justify-content: center; /* Zentriert den Text horizontal */
+   text-align: center; /* Text bleibt zentriert */
+   padding: 10px; /* Optional: Abstand innerhalb des Containers */
 }

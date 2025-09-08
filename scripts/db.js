@@ -78,5 +78,85 @@ let questions = [
     "answer_3": "Overwatch",
     "answer_4": "Starcraft",
     "right_answer": 1
+  },
+  {
+    "question": "Wie heißt das Starter-Pokémon vom Typ Feuer?",
+    "answer_1": "Glumanda",
+    "answer_2": "Schiggy",
+    "answer_3": "Bisasam",
+    "answer_4": "Pikachu",
+    "right_answer": 1
+  },
+  {
+    "question": "Welches Pokémon ist vom Typ Elektro?",
+    "answer_1": "Mewtu",
+    "answer_2": "Pikachu",
+    "answer_3": "Taubsi",
+    "answer_4": "Raupy",
+    "right_answer": 2
+  },
+  {
+    "question": "Wie viele Orden kann man in der Kanto-Region sammeln?",
+    "answer_1": "6",
+    "answer_2": "8",
+    "answer_3": "10",
+    "answer_4": "12",
+    "right_answer": 2
+  },
+  {
+    "question": "Welches Pokémon ist das Maskottchen der Pokémon-Reihe?",
+    "answer_1": "Glurak",
+    "answer_2": "Pikachu",
+    "answer_3": "Mew",
+    "answer_4": "Bisasam",
+    "right_answer": 2
+  },
+  {
+    "question": "Wie heißt das legendäre Vogel-Pokémon vom Typ Eis?",
+    "answer_1": "Zapdos",
+    "answer_2": "Lavados",
+    "answer_3": "Arktos",
+    "answer_4": "Ho-Oh",
+    "right_answer": 3
+  },
+  {
+    "question": "Welches Pokémon ist bekannt für seinen Schlaf?",
+    "answer_1": "Relaxo",
+    "answer_2": "Pummeluff",
+    "answer_3": "Abra",
+    "answer_4": "Enton",
+    "right_answer": 1
+  },
+  {
+    "question": "Wie heißt das Pokémon, das sich aus Schiggy entwickelt?",
+    "answer_1": "Turtok",
+    "answer_2": "Bisaknosp",
+    "answer_3": "Glutexo",
+    "answer_4": "Entoron",
+    "right_answer": 1
+  },
+  {
+    "question": "Welches Pokémon ist vom Typ Geist?",
+    "answer_1": "Nebulak",
+    "answer_2": "Zubat",
+    "answer_3": "Onix",
+    "answer_4": "Machollo",
+    "right_answer": 1
+  },
+  {
+    "question": "Wie heißt das Pokémon, das sich aus Evoli entwickelt, wenn es einen Donnerstein benutzt?",
+    "answer_1": "Aquana",
+    "answer_2": "Flamara",
+    "answer_3": "Blitza",
+    "answer_4": "Psiana",
+    "right_answer": 3
+  },
+  {
+    "question": "Welches Pokémon ist das erste im Pokédex?",
+    "answer_1": "Bisasam",
+    "answer_2": "Glumanda",
+    "answer_3": "Raupy",
+    "answer_4": "Taubsi",
+    "right_answer": 1
   }
 ];

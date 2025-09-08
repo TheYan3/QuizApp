@@ -8,6 +8,10 @@ function init() {
 }
 
 function showQuestionAndAnswers() {
+    if (currentQuestion >= 9) {
+        document.getElementById("tabs").classList.remove("leftLine")
+        document.getElementById("tabs2").classList.add("leftLine")
+    }
     document.getElementById("questionLine").innerHTML = questionRef.question;
     document.getElementById("btnRight").disabled = true;
 
@@ -33,7 +37,7 @@ function nextQuestion() {
     if (currentQuestion != questions.length - 1) {
         clearTimeout(timeoutId);
 
-        currentQuestion += 1
+        currentQuestion ++
         questionRef = questions[currentQuestion]
         for (let cl = 1; cl <= 4; cl++) {
             document.getElementById("answerLine" + cl).classList.remove("bg-success", "bg-danger")
@@ -68,4 +72,4 @@ function btndisable() {
     document.getElementById("btnLeft").disabled = true;
 }
 
-// meherer frage bibliootheken hizugügen
+
