@@ -1,6 +1,7 @@
 let currentQuestion = 0
 let questionRef = questions[currentQuestion]
 let timeoutId;
+let score = 0;
 
 function init() {
      showQuestionAndAnswers() 
@@ -8,7 +9,7 @@ function init() {
 }
 
 function showQuestionAndAnswers() {
-    if (currentQuestion >= 9) {
+    if (currentQuestion >= 10) {
         document.getElementById("tabs").classList.remove("leftLine")
         document.getElementById("tabs2").classList.add("leftLine")
     }
@@ -22,21 +23,22 @@ function showQuestionAndAnswers() {
 
 function answer(i) {
     if (i == questionRef.right_answer){
+        score++;
         document.getElementById("answerLine" + i).classList.add("bg-success") 
         document.getElementById("btnRight").disabled = false;
         timeoutId = setTimeout(() => nextQuestion(), 2500);
     }else {
          document.getElementById("answerLine" + i).classList.add("bg-danger")
+         score--;
 
     }
-
 }
 
 function nextQuestion() {
 
     if (currentQuestion != questions.length - 1) {
         clearTimeout(timeoutId);
-
+        updateProgressbar();
         currentQuestion ++
         questionRef = questions[currentQuestion]
         for (let cl = 1; cl <= 4; cl++) {
@@ -45,31 +47,40 @@ function nextQuestion() {
         document.getElementById("btnLeft").disabled = false;
         showQuestionAndAnswers()   
     } else {
+        quizEnd()
+    }  
+}
 
-        document.getElementById("questionLine").innerHTML = "Glückwunsch! Du hast das Quiz beendet!";
-        document.getElementById("btnRight").disabled = true;
-        document.getElementById("btnLeft").disabled = true;
-        for (let cl = 1; cl <= 4; cl++) {
-            document.getElementById("answerLine" + cl).classList.add("d-none")
-        }
-        
+function updateProgressbar() {
+    const progressBar = document.getElementById("progressBar");
+    let percentage = ((currentQuestion + 1) / questions.length) * 100;	
+    progressBar.style.width = percentage + "%";
+}
+
+function quizEnd() {
+    document.getElementById("progressBar").style.width = "100%";
+    document.getElementById("questionLine").innerHTML = quizEndTemplate();
+    document.getElementById("answerContainer").classList.add("d-none");
+    document.getElementById("btnRight").disabled = true;
+    document.getElementById("btnLeft").disabled = true;
+    for (let cl = 1; cl <= 4; cl++) {
+        document.getElementById("answerLine" + cl).classList.add("d-none")
     }
-    
 }
 
 function lastQuestion() {
-
     if (currentQuestion >= 0) {
-         currentQuestion -= 1
-         questionRef = questions[currentQuestion]
+         currentQuestion -= 1;
+         questionRef = questions[currentQuestion];
 
-         showQuestionAndAnswers()
+         showQuestionAndAnswers();
     }
- 
 }
 
 function btndisable() {
     document.getElementById("btnLeft").disabled = true;
 }
 
-
+function restartQuiz() {
+    location.reload();
+}
